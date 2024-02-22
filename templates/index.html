@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Estudiantes</title>
+    <style>
+        /* Estilos CSS para mejorar la apariencia */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .container h2 {
+            margin-bottom: 10px;
+        }
+
+        .container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .container ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .container ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Información de Estudiantes</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Lista de Estudiantes</h2>
+        <ul>
+            {% for estudiante in estudiantes %}
+            <li>
+                <strong>Num.Póliza:</strong> {{ estudiante[0] }}<br>
+                <strong>Nombre Asegurado:</strong> {{ estudiante[1] }}<br>
+                <strong>Identificación:</strong> {{ estudiante[2] }}<br>
+                <strong>Vig. Desde:</strong> {{ estudiante[3] }}<br>
+                <strong>Vig. Hasta:</strong> {{ estudiante[4] }}<br>
+                <strong>Participa:</strong> {{ estudiante[5] }}<br>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Universidad XYZ. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
